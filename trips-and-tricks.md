@@ -13,3 +13,7 @@ Open Pallete > formatter > check prettier
 # Set tabsize
 
 Open Pallete > tabsize > 2
+
+# Add tailwind
+
+`vue add tailwind`
