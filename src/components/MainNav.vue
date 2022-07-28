@@ -4,7 +4,7 @@
       <div
         class="flex flex-nowrap h-full px-8 mx-auto border-b bored-solid border-brand-gray-1"
       >
-        <a href="/" class="flex items-center h-full text-xl">{{ company }}</a>
+        <a v-bind:href="url" class="flex items-center h-full text-xl">{{ company }}</a>
         <h2 class="flex items-center h-full ml-8">
           Developed by {{ author.firstName }} {{ author.lastName }}
         </h2>
@@ -24,6 +24,7 @@ export default {
         firstName: "John",
         lastName: "Doe",
       },
+      url: "https://www.google.com",
     };
   },
 };
