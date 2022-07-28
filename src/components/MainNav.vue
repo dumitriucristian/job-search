@@ -4,7 +4,10 @@
       <div
         class="flex flex-nowrap h-full px-8 mx-auto border-b bored-solid border-brand-gray-1"
       >
-        <a href="/" class="flex items-center h-full text-xl">{{ someText }}</a>
+        <a href="/" class="flex items-center h-full text-xl">{{ company }}</a>
+        <h2 class="flex items-center h-full ml-8">
+          Developed by {{ author.firstName }} {{ author.lastName }}
+        </h2>
       </div>
     </div>
   </header>
@@ -16,7 +19,11 @@ export default {
   name: "MainNav",
   data() {
     return {
-      someText: "This is some text",
+      company: "IBM",
+      author: {
+        firstName: "John",
+        lastName: "Doe",
+      },
     };
   },
 };
