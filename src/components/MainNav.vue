@@ -7,20 +7,8 @@
         <a :href="url" class="flex items-center h-full text-xl">{{ company }}</a>
         <nav class="h-full ml-12">
           <ul class="flex w-full h-full p-0 m-0 list-none">
-            <li class="h-full">
-              <a href="#" class="flex items-center h-full py-2.5">Bobo Corp</a>
-            </li>
-            <li class="h-full ml-9">
-              <a href="#" class="flex items-center h-full py-2.5">What we do</a>
-            </li>
-            <li class="h-full ml-9">
-              <a href="#" class="flex items-center h-full py-2.5">Who we are</a>
-            </li>
-            <li class="h-full ml-9">
-              <a href="#" class="flex items-center h-full py-2.5">Teams</a>
-            </li>
-            <li class="h-full ml-9">
-              <a href="#" class="flex items-center h-full py-2.5">Locations</a>
+            <li v-for="menuItem in menuItems" :key="menuItem" class="h-full">
+              <a href="#" class="flex items-center h-full py-2.5">{{ menuItem }}</a>
             </li>
           </ul>
         </nav>
@@ -41,6 +29,7 @@ export default {
         lastName: "Doe",
       },
       url: "https://www.google.com",
+      menuItems: ["Teams", "How we hire", "Locations", "Life at Bob", "Students", "Jobs"],
     };
   },
 };
