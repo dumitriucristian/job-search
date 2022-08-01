@@ -18,7 +18,8 @@
           </ul>
         </nav>
         <div class="ml-auto p-3">
-          <action-button></action-button>
+          <profile-image v-if="isLoggedIn" />
+          <action-button v-else />
         </div>
       </div>
     </div>
@@ -27,9 +28,10 @@
 <script>
 //import { resolveComponents } from "uri-js";
 import ActionButton from "@/components/ActionButton.vue";
+import ProfileImage from "./ProfileImage.vue";
 
 export default {
-  components: { ActionButton },
+  components: { ActionButton, ProfileImage },
   name: "MainNav",
   data() {
     return {
@@ -41,6 +43,7 @@ export default {
         firstName: "John",
         lastName: "Doe",
       },
+      isLoggedIn: true,
       url: "https://www.google.com",
       menuItems: ["Teams", "How we hire", "Locations", "Life at Bob", "Students", "Jobs"],
     };
