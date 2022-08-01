@@ -19,7 +19,13 @@
         </nav>
         <div class="ml-auto p-3">
           <profile-image v-if="isLoggedIn" data-test="profile-image" />
-          <action-button v-else data-test="login-button" @click="loginUser" />
+          <action-button
+            v-else
+            text="Sign In"
+            :is-primary="false"
+            data-test="login-button"
+            @click="loginUser"
+          />
         </div>
       </div>
     </div>
