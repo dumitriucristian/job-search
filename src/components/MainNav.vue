@@ -22,7 +22,7 @@
           <action-button
             v-else
             text="Sign In"
-            :is-primary="false"
+            type="primary"
             data-test="login-button"
             @click="loginUser"
           />
@@ -37,8 +37,8 @@ import ActionButton from "@/components/ActionButton.vue";
 import ProfileImage from "./ProfileImage.vue";
 
 export default {
-  components: { ActionButton, ProfileImage },
   name: "MainNav",
+  components: { ActionButton, ProfileImage },
   data() {
     return {
       components: {
