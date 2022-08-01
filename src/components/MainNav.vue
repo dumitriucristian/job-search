@@ -17,7 +17,7 @@
             </li>
           </ul>
         </nav>
-        <div class="ml-auto">
+        <div class="ml-auto p-3">
           <action-button></action-button>
         </div>
       </div>
