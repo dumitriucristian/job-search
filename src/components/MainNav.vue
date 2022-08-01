@@ -17,17 +17,25 @@
             </li>
           </ul>
         </nav>
+        <div class="ml-auto">
+          <action-button></action-button>
+        </div>
       </div>
     </div>
   </header>
 </template>
 <script>
 //import { resolveComponents } from "uri-js";
+import ActionButton from "@/components/ActionButton.vue";
 
 export default {
+  components: { ActionButton },
   name: "MainNav",
   data() {
     return {
+      components: {
+        ActionButton,
+      },
       company: "IBM",
       author: {
         firstName: "John",
