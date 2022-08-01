@@ -19,7 +19,7 @@
         </nav>
         <div class="ml-auto p-3">
           <profile-image v-if="isLoggedIn" data-test="profile-image" />
-          <action-button v-else data-test="login-button" />
+          <action-button v-else data-test="login-button" @click="loginUser" />
         </div>
       </div>
     </div>
@@ -47,6 +47,11 @@ export default {
       url: "https://www.google.com",
       menuItems: ["Teams", "How we hire", "Locations", "Life at Bob", "Students", "Jobs"],
     };
+  },
+  methods: {
+    loginUser() {
+      this.isLoggedIn = true;
+    },
   },
 };
 </script>
