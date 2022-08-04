@@ -2,40 +2,46 @@
   <header class="w-full text-sm">
     <div class="fixed top-0 left-0 w-full h-16 bg-white">
       <div
-        class="flex flex-nowrap h-full px-8 mx-auto border-b border-solid border-brand-gray-1 items-center"
+        class="flex flex-nowrap h-full px-8 mx-auto border-b border-solid border-brand-gray-1"
       >
-        <a :href="url" class="flex items-center h-full text-xl">{{ company }}</a>
+        <a :href="url" class="flex items-center h-full text-xl">{{
+          company
+        }}</a>
+
         <nav class="h-full ml-12">
-          <ul class="flex w-full h-full p-0 m-0 list-none">
+          <ul class="flex h-full p-0 m-0 list-none">
             <li
               v-for="menuItem in menuItems"
               :key="menuItem"
-              class="h-full first:ml-0 ml-12"
-              data-test="menu-item"
+              class="h-full ml-9 first:ml-0"
+              data-test="main-nav-list-item"
             >
-              <a href="#" class="flex items-center h-full py-2.5">{{ menuItem }}</a>
+              <a href="/" class="flex items-center h-full py-2.5">{{
+                menuItem
+              }}</a>
             </li>
           </ul>
         </nav>
-        <div class="ml-auto p-3">
+
+        <div class="flex items-center h-full ml-auto">
           <profile-image v-if="isLoggedIn" data-test="profile-image" />
           <action-button
             v-else
-            text="Sign In"
-            type="primary"
+            text="Sign in"
             data-test="login-button"
             @click="loginUser"
           />
         </div>
       </div>
-      <sub-nav v-if="isLoggedIn" />
+
+      <sub-nav v-if="isLoggedIn" data-test="SubNav" />
     </div>
   </header>
 </template>
+
 <script>
-//import { resolveComponents } from "uri-js";
 import ActionButton from "@/components/ActionButton.vue";
-import ProfileImage from "./ProfileImage.vue";
+import ProfileImage from "@/components/ProfileImage.vue";
 import SubNav from "@/components/SubNav.vue";
 
 export default {
@@ -47,17 +53,17 @@ export default {
   },
   data() {
     return {
-      components: {
-        ActionButton,
-      },
-      company: "IBM",
-      author: {
-        firstName: "John",
-        lastName: "Doe",
-      },
+      company: "Bobo Careers",
+      url: "https://careers.google.com",
+      menuItems: [
+        "Teams",
+        "Locations",
+        "Life at Bobo",
+        "How we hire",
+        "Students",
+        "Jobs",
+      ],
       isLoggedIn: false,
-      url: "https://www.google.com",
-      menuItems: ["Teams", "How we hire", "Locations", "Life at Bob", "Students", "Jobs"],
     };
   },
   methods: {

@@ -1,6 +1,9 @@
 <template>
-  <button :class="buttonClass">{{ text }}</button>
+  <button :class="buttonClass">
+    {{ text }}
+  </button>
 </template>
+
 <script>
 export default {
   name: "ActionButton",
@@ -25,16 +28,16 @@ export default {
       };
     },
   },
-  methods: {},
 };
-///computed properties: any data that changes and is dependent on other data
 </script>
+
 <style scoped>
 button {
-  @apply px-5 py-3 font-medium rounded;
+  @apply px-5 py-3 rounded font-medium;
 }
+
 .primary {
-  @apply bg-brand-blue-1  text-white  hover:shadow-blue;
+  @apply text-white border-0 bg-brand-blue-1 hover:shadow-blue;
 }
 
 .secondary {
