@@ -1,8 +1,8 @@
 <template>
   <header class="w-full text-sm">
-    <div class="fixed top-0 left-0 w-full bg-white">
+    <div class="fixed top-0 left-0 w-full h-16 bg-white">
       <div
-        class="flex flex-nowrap h-full px-8 mx-auto border-b bored-solid border-brand-gray-1 items-center"
+        class="flex flex-nowrap h-full px-8 mx-auto border-b border-solid border-brand-gray-1 items-center"
       >
         <a :href="url" class="flex items-center h-full text-xl">{{ company }}</a>
         <nav class="h-full ml-12">
@@ -28,6 +28,7 @@
           />
         </div>
       </div>
+      <sub-nav v-if="isLoggedIn" />
     </div>
   </header>
 </template>
@@ -35,10 +36,15 @@
 //import { resolveComponents } from "uri-js";
 import ActionButton from "@/components/ActionButton.vue";
 import ProfileImage from "./ProfileImage.vue";
+import SubNav from "@/components/SubNav.vue";
 
 export default {
   name: "MainNav",
-  components: { ActionButton, ProfileImage },
+  components: {
+    ActionButton,
+    ProfileImage,
+    SubNav,
+  },
   data() {
     return {
       components: {
