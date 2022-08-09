@@ -1,10 +1,10 @@
 <template>
   <input
     type="text"
-    placeholder="{{placeholder}}"
+    placeholder="placeholder"
     class="w-full text-lg font-normal focus-outline:none"
-    :value="value"
-    @change="handleInput"
+    :value="modelValue"
+    @input="handleInput"
   />
 </template>
 
@@ -17,16 +17,15 @@ export default {
       required: false,
       default: "",
     },
+    modelValue: {
+      type: String,
+      required: true,
+    },
   },
-  data() {
-    return {
-      value: "",
-    };
-  },
+  emtis: ["update:modelValue"],
   methods: {
     handleInput($event) {
-      this.value = $event.target.value;
-      this.$emit("handleInput", this.value);
+      this.$emit("update:modelValue", $event.target.value);
     },
   },
 };
