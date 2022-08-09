@@ -6,12 +6,7 @@
     <div class="flex flex-nowrap flex-1 h-full text-base font-light">
       <div class="relative flex item-center flex-1 h-full pr-3">
         <label class="absolute left-0 -top-10">Role</label>
-        <input
-          type="text"
-          placeholder="Software Engineer"
-          class="w-full text-lg font-normal focus:outline-none"
-          v-model="role"
-        />
+        <text-input placeholder="Los angeles" @handleInput="updateRole"></text-input>
       </div>
       <span
         class="flex items-center h-full px-3 border-l border-r border-brand-gray-3 bg-brand-gray-2"
@@ -19,29 +14,34 @@
       >
       <div class="relative flex items-center flex-1 h-full pl-3">
         <label class="absolute left-0 -top-10">Where</label>
-        <input
-          type="text"
-          placeholder="Los Angeles"
-          class="w-full text-lg font-normal focus-outline:none"
-          v-bind="location"
-        />
+        <text-input placeholder="Los angeles" @handleInput="updateLocation"></text-input>
         <action-button text="search" type="secondary" />
       </div>
     </div>
   </form>
 </template>
 <script>
+import TextInput from "./TextInput";
 import ActionButton from "./ActionButton.vue";
 export default {
   name: "JobSearchForm",
   components: {
     ActionButton,
+    TextInput,
   },
   data() {
     return {
       location: "",
       role: "",
     };
+  },
+  methods: {
+    updateRole(payload) {
+      this.role = payload;
+    },
+    updateLocation(payload) {
+      this.location = payload;
+    },
   },
 };
 </script>
