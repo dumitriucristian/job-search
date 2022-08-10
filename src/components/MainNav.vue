@@ -16,7 +16,9 @@
               class="h-full ml-9 first:ml-0"
               data-test="main-nav-list-item"
             >
-              <a href="/" class="flex items-center h-full py-2.5">{{ menuItem }}</a>
+              <router-link :to="menuItem.url" class="flex items-center h-full py-2.5">{{
+                menuItem.text
+              }}</router-link>
             </li>
           </ul>
         </nav>
@@ -52,12 +54,12 @@ export default {
   data() {
     return {
       menuItems: [
-        "Teams",
-        "Locations",
-        "Life at Bobo",
-        "How we hire",
-        "Students",
-        "Jobs",
+        { text: "Teams", url: "/" },
+        { text: "Locations", url: "/" },
+        { text: "Life at Bobo", url: "/" },
+        { text: "How we hire", url: "/" },
+        { text: "Students", url: "/" },
+        { text: "Jobs", url: "/jobs/results" },
       ],
       isLoggedIn: false,
     };
