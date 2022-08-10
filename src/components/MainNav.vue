@@ -5,7 +5,7 @@
         class="flex flex-nowrap h-full px-8 mx-auto border-b border-solid border-brand-gray-1"
       >
         <router-link to="/" class="flex items-center h-full text-xl"
-          >Bob Company</router-link
+          >Bobo Careers</router-link
         >
 
         <nav class="h-full ml-12">
