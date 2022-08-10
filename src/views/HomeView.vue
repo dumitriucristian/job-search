@@ -1,9 +1,12 @@
 <template>
-  <h1>Home View</h1>
+  <hero></hero>
 </template>
 
 <script>
+import Hero from "@/components/Hero.vue";
+
 export default {
   name: "HomeView",
+  components: { Hero },
 };
 </script>
