@@ -44,4 +44,4 @@ npm install --save-dev tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 npm install --save-dev prettier-plugin-tailwindcss
 npm install --save-dev @testing-library/vue @testing-library/jest-dom @testing-library/user-event
-Aria roles
+npm install --save @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/vue-fontawesome@latest-3
