@@ -6,10 +6,7 @@
     <div class="flex h-full flex-1 flex-nowrap text-base font-light">
       <div class="relative flex h-full flex-1 items-center pr-3">
         <label class="absolute left-0 -top-10">Role</label>
-        <text-input
-          placeholder="Software Engineers"
-          @handle-input="updateRole"
-        />
+        <text-input placeholder="Software Engineers" v-model="role" />
         <span
           class="flex h-full items-center border-l border-r border-brand-gray-3 bg-brand-gray-2 px-3"
           >in</span
@@ -18,7 +15,7 @@
 
       <div class="relative flex h-full flex-1 items-center pr-3">
         <label class="absolute left-0 -top-10">Where?</label>
-        <text-input placeholder="Los Angeles" @handle-input="updateLocation" />
+        <text-input placeholder="Los Angeles" v-model="location" />
       </div>
     </div>
     <action-button text="Search" type="secondary" class="rounded-r-3xl" />
@@ -40,16 +37,6 @@ export default {
       location: "",
       role: "",
     };
-  },
-  methods: {
-    updateRole(payload) {
-      console.log("updateRole:" + payload);
-      this.role = payload;
-    },
-    updateLocation(payload) {
-      console.log("updateLocation:" + payload);
-      this.location = payload;
-    },
   },
 };
 </script>
