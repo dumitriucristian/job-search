@@ -1,10 +1,20 @@
 import { render, screen } from "@testing-library/vue";
 
-import TheSubnav from "@/components/TheSubnav.vue";
+import TheSubnav from "@/components/Navigation/TheSubnav.vue";
 import { createConditionalExpression } from "@vue/compiler-core";
 
 describe("TheSubnav", () => {
   describe("when user is on jobs page", () => {
+    const renderSubNav = () => {
+      return render(TheSubnav, {
+        global: {
+          stubs: {
+            FontAwesomeIcon: true,
+          },
+        },
+      });
+    };
+
     it("displays jobs count", () => {
       render(TheSubnav, {
         global: {

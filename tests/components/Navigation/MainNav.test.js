@@ -1,17 +1,27 @@
 import { render, screen } from "@testing-library/vue";
 
-import MainNav from "@/components/MainNav.vue";
+import MainNav from "@/components/Navigation/MainNav.vue";
 import { userEvent } from "@testing-library/user-event";
 
 describe("MainNav", () => {
+  const renderMainNav = () => {
+    return render(MainNav, {
+      global: {
+        stubs: {
+          FontAwesomeIcon: true,
+        },
+      },
+    });
+  };
+
   it("displays company name", () => {
-    render(MainNav);
+    renderMainNav();
     const companyName = screen.getByText("Bobo Careers");
     expect(companyName).toBeInTheDocument();
   });
 
   it("displays menu items for navigation", () => {
-    render(MainNav);
+    renderMainNav();
     const navigationMenuItems = screen.getAllByRole("listitem");
     const navigationMenuTexts = navigationMenuItems.map(
       (item) => item.textContent
@@ -28,8 +38,7 @@ describe("MainNav", () => {
 
   describe("when the user logs in", () => {
     it("displays the user profile picture", async () => {
-      render(MainNav);
-
+      renderMainNav();
       const profileImage = screen.queryByRole("img", {
         name: /user profile image/i,
       });

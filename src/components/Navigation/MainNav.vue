@@ -1,5 +1,5 @@
 <template>
-  <header class="brand-green-1 w-full text-sm">
+  <header :class="['w-full', 'text-sm', headerHeight]">
     <div class="fixed top-0 left-0 h-16 w-full bg-white">
       <div
         class="border-brand-gray-w mx-auto flex h-full flex-nowrap border-b border-solid border-brand-gray-1 px-8"
@@ -33,9 +33,9 @@
 </template>
 
 <script>
-import ActionButton from "@/components/ActionButton.vue";
-import ProfileImage from "@/components/ProfileImage.vue";
-import TheSubnav from "@/components/TheSubnav.vue";
+import ActionButton from "@/components/Shared/ActionButton.vue";
+import ProfileImage from "@/components/Navigation/ProfileImage.vue";
+import TheSubnav from "@/components/Navigation/TheSubnav.vue";
 
 export default {
   name: "MainNav",
@@ -43,6 +43,14 @@ export default {
     ActionButton,
     ProfileImage,
     TheSubnav,
+  },
+  computed: {
+    headerHeight() {
+      return {
+        "h-16": !this.isLoggedIn,
+        "h-32": this.isLoggedIn,
+      };
+    },
   },
   data() {
     return {
