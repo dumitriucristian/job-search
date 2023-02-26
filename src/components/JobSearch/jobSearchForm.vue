@@ -39,4 +39,8 @@ export default {
     };
   },
 };
+/**
+ * @handleInput="someMethod"
+ * use v-model modelValue
+ */
 </script>
