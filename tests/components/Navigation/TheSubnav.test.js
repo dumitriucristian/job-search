@@ -16,8 +16,15 @@ describe("TheSubnav", () => {
     };
 
     it("displays jobs count", () => {
+      const $route = {
+        name: "Home",
+      };
+
       render(TheSubnav, {
         global: {
+          mocks: {
+            $route,
+          },
           stubs: {
             FontAwesomeIcon: true,
           },

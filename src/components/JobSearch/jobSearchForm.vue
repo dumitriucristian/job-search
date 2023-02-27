@@ -1,6 +1,7 @@
 <template>
   <form
     class="flex h-12 w-full items-center rounded-3xl border border-solid border-brand-gray-3"
+    @submit.prevent="searchForJobs"
   >
     <font-awesome-icon :icon="['fas', 'search']" class="m-4" />
     <div class="flex h-full flex-1 flex-nowrap text-base font-light">
@@ -37,6 +38,16 @@ export default {
       location: "",
       role: "",
     };
+  },
+  methods: {
+    searchForJobs() {
+      console.log("test", this.role, this.location);
+
+      this.$router.push({
+        name: "JobResults",
+        query: { role: this.role, location: this.location },
+      });
+    },
   },
 };
 /**
