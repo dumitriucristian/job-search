@@ -46,3 +46,5 @@ npm install --save-dev prettier-plugin-tailwindcss
 npm install --save-dev @testing-library/vue @testing-library/jest-dom @testing-library/user-event
 npm install --save @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/vue-fontawesome@latest-3
 npm install --save vue-router@4
+npm install --save-dev json-server
+npm install --save axios
